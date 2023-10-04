@@ -1,30 +1,7 @@
 def month_details(month, year):
-    if month == 0:
-        return ("January - {}".format(year), 31)
-    if month == 1:
-        if (year%100!=0 and year%4==0) or year%400==0:
-            return ("Febuary - {}".format(year), 29)
-        return ("Febuary - {}".format(year), 28)
-    if month == 2:
-        return ("March - {}".format(year), 31)
-    if month == 3:
-        return ("April - {}".format(year), 30)
-    if month == 4:
-        return ("May - {}".format(year), 31)
-    if month == 5:
-        return ("June - {}".format(year), 30)
-    if month == 6:
-        return ("July - {}".format(year), 31)
-    if month == 7:
-        return ("August - {}".format(year), 31)
-    if month == 8:
-        return ("September - {}".format(year), 30)
-    if month == 9:
-        return ("October - {}".format(year), 31)
-    if month == 10:
-        return ("November - {}".format(year), 30)
-    if month == 11:
-        return ("December - {}".format(year), 31)
+    months = [["January - {}".format(year), 31], ["Febuary - {}".format(year), 28 + (year%100!=0 and year%4==0) or year%400==0], ["March - {}".format(year), 31], ["April - {}".format(year), 30], ["May - {}".format(year), 31], ["June - {}".format(year), 30], ["July - {}".format(year), 31], ["August - {}".format(year), 31], ["September - {}".format(year), 30], ["October - {}".format(year), 31], ["November - {}".format(year), 30], ["December - {}".format(year), 31]]
+    return months[month]
+
 year = int(input("Enter a year: "))
 dayOfWeek=98
 while(dayOfWeek>6 or dayOfWeek<0):
@@ -47,3 +24,4 @@ for i in range(0,12):
         if dayOfWeek==0:
             print()
     print("\n")
+    
