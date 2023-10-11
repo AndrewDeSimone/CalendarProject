@@ -10,8 +10,7 @@ for i in range(0,12):
             print("    ",end="")
             j+=1
         print("{num:>4}".format(num=i),end="")
-        dayOfWeek=(dayOfWeek+1)%7
-        j=dayOfWeek
+        j = dayOfWeek=(dayOfWeek+1)%7
         if dayOfWeek==0: print()
     print("\n")
     
